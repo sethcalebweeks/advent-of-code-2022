@@ -8,6 +8,10 @@ defmodule Day09 do
 
   def new_tail({head_x, head_y}, {tail_x, tail_y}) do
      case {tail_x - head_x, tail_y - head_y} do
+      {-2, -2} -> {head_x - 1, head_y - 1}
+      {-2, 2} -> {head_x - 1, head_y + 1}
+      {2, -2} -> {head_x + 1, head_y - 1}
+      {2, 2} -> {head_x + 1, head_y + 1}
       {-2, _} -> {head_x - 1, head_y}
       {2, _} -> {head_x + 1, head_y}
       {_, -2} -> {head_x, head_y - 1}
